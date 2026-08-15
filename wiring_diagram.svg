@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" font-family="Arial, sans-serif">
+  <rect width="1200" height="900" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" font-size="26" font-weight="bold" fill="#1a1a1a">ESP32-S3 Voice Assistant — Wiring Diagram</text>
+  <text x="600" y="65" text-anchor="middle" font-size="14" fill="#666">শুধুমাত্র ৭টি ফ্রি GPIO ব্যবহার করা হয়েছে: 1, 2, 14, 21, 41, 42, 47</text>
+
+  <!-- ESP32 Center Box -->
+  <rect x="480" y="380" width="240" height="140" rx="14" fill="#f9d77e" stroke="#333" stroke-width="2.5"/>
+  <text x="600" y="435" text-anchor="middle" font-size="20" font-weight="bold" fill="#1a1a1a">ESP32-S3</text>
+  <text x="600" y="458" text-anchor="middle" font-size="13" fill="#333">N16R8</text>
+  <text x="600" y="478" text-anchor="middle" font-size="12" fill="#555">16MB Flash / OPI PSRAM</text>
+  <text x="600" y="498" text-anchor="middle" font-size="12" fill="#555">7 Free GPIO Board</text>
+
+  <!-- ===================== TFT DISPLAY (top-left) ===================== -->
+  <rect x="60" y="80" width="330" height="220" rx="12" fill="#eaf2ff" stroke="#2f6fbf" stroke-width="2"/>
+  <text x="225" y="108" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a3d6b">ST7789 TFT ডিসপ্লে</text>
+  <text x="225" y="126" text-anchor="middle" font-size="12" fill="#333">1.47" (172 x 320)</text>
+
+  <text x="80" y="155" font-size="13" fill="#111">SCLK</text>
+  <text x="80" y="180" font-size="13" fill="#111">MOSI</text>
+  <text x="80" y="205" font-size="13" fill="#111">DC</text>
+  <text x="80" y="230" font-size="13" fill="#111">CS</text>
+  <text x="80" y="255" font-size="13" fill="#111">RST</text>
+
+  <text x="360" y="155" text-anchor="end" font-size="13" font-weight="bold" fill="#c0392b">GPIO 41</text>
+  <text x="360" y="180" text-anchor="end" font-size="13" font-weight="bold" fill="#c0392b">GPIO 42</text>
+  <text x="360" y="205" text-anchor="end" font-size="13" font-weight="bold" fill="#c0392b">GPIO 47</text>
+  <text x="360" y="230" text-anchor="end" font-size="12" fill="#333">GND (সরাসরি তার)</text>
+  <text x="360" y="255" text-anchor="end" font-size="12" fill="#333">3.3V (সরাসরি তার)</text>
+
+  <!-- lines TFT to ESP32 -->
+  <line x1="390" y1="150" x2="600" y2="380" stroke="#2f6fbf" stroke-width="1.6"/>
+  <line x1="390" y1="175" x2="600" y2="380" stroke="#2f6fbf" stroke-width="1.6"/>
+  <line x1="390" y1="200" x2="600" y2="380" stroke="#2f6fbf" stroke-width="1.6"/>
+
+  <!-- ===================== MICROPHONE (bottom-left) ===================== -->
+  <rect x="60" y="600" width="330" height="200" rx="12" fill="#eafbea" stroke="#2f9e44" stroke-width="2"/>
+  <text x="225" y="628" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e6b2f">I2S মাইক্রোফোন</text>
+
+  <text x="80" y="670" font-size="13" fill="#111">SCK / BCK</text>
+  <text x="80" y="700" font-size="13" fill="#111">WS / LRCK</text>
+  <text x="80" y="730" font-size="13" fill="#111">SD (Data Out)</text>
+
+  <text x="360" y="670" text-anchor="end" font-size="13" font-weight="bold" fill="#c0392b">GPIO 1 (শেয়ার্ড)</text>
+  <text x="360" y="700" text-anchor="end" font-size="13" font-weight="bold" fill="#c0392b">GPIO 2 (শেয়ার্ড)</text>
+  <text x="360" y="730" text-anchor="end" font-size="13" font-weight="bold" fill="#c0392b">GPIO 14 (ইনপুট)</text>
+
+  <line x1="390" y1="665" x2="600" y2="520" stroke="#2f9e44" stroke-width="1.6"/>
+  <line x1="390" y1="695" x2="600" y2="520" stroke="#2f9e44" stroke-width="1.6"/>
+  <line x1="390" y1="725" x2="600" y2="520" stroke="#2f9e44" stroke-width="1.6"/>
+
+  <!-- ===================== DAC/SPEAKER (bottom-right) ===================== -->
+  <rect x="810" y="600" width="330" height="200" rx="12" fill="#fdecea" stroke="#c0392b" stroke-width="2"/>
+  <text x="975" y="628" text-anchor="middle" font-size="16" font-weight="bold" fill="#8b2115">I2S DAC / স্পিকার</text>
+  <text x="975" y="646" text-anchor="middle" font-size="12" fill="#333">(CA-MT21)</text>
+
+  <text x="830" y="680" font-size="13" fill="#111">BCLK</text>
+  <text x="830" y="710" font-size="13" fill="#111">LRC</text>
+  <text x="830" y="740" font-size="13" fill="#111">DIN (Data In)</text>
+
+  <text x="1120" y="680" text-anchor="end" font-size="13" font-weight="bold" fill="#c0392b">GPIO 1 (শেয়ার্ড)</text>
+  <text x="1120" y="710" text-anchor="end" font-size="13" font-weight="bold" fill="#c0392b">GPIO 2 (শেয়ার্ড)</text>
+  <text x="1120" y="740" text-anchor="end" font-size="13" font-weight="bold" fill="#c0392b">GPIO 21 (আউটপুট)</text>
+
+  <line x1="810" y1="675" x2="600" y2="520" stroke="#c0392b" stroke-width="1.6"/>
+  <line x1="810" y1="705" x2="600" y2="520" stroke="#c0392b" stroke-width="1.6"/>
+  <line x1="810" y1="735" x2="600" y2="520" stroke="#c0392b" stroke-width="1.6"/>
+
+  <!-- ===================== SD CARD (top-right) ===================== -->
+  <rect x="810" y="80" width="330" height="100" rx="12" fill="#f3eaff" stroke="#7b2fbf" stroke-width="2"/>
+  <text x="975" y="108" text-anchor="middle" font-size="16" font-weight="bold" fill="#4a1b6b">SD কার্ড</text>
+  <text x="975" y="130" text-anchor="middle" font-size="12" fill="#333">বিল্ট-ইন SD_MMC স্লট</text>
+  <text x="975" y="150" text-anchor="middle" font-size="12" fill="#333">(আলাদা GPIO লাগে না)</text>
+  <line x1="900" y1="180" x2="650" y2="390" stroke="#7b2fbf" stroke-width="1.6" stroke-dasharray="6,4"/>
+
+  <!-- ===================== CAMERA (below SD) ===================== -->
+  <rect x="810" y="210" width="330" height="100" rx="12" fill="#fff7e0" stroke="#c98a00" stroke-width="2"/>
+  <text x="975" y="238" text-anchor="middle" font-size="16" font-weight="bold" fill="#7a5300">ক্যামেরা মডিউল</text>
+  <text x="975" y="260" text-anchor="middle" font-size="12" fill="#333">বিল্ট-ইন ক্যামেরা স্লট</text>
+  <text x="975" y="280" text-anchor="middle" font-size="12" fill="#333">(আলাদা GPIO লাগে না)</text>
+  <line x1="900" y1="310" x2="650" y2="400" stroke="#c98a00" stroke-width="1.6" stroke-dasharray="6,4"/>
+
+  <!-- Legend -->
+  <rect x="60" y="830" width="18" height="18" fill="#f9d77e" stroke="#333"/>
+  <text x="85" y="844" font-size="12" fill="#333">ESP32-S3 বোর্ড</text>
+
+  <line x1="220" y1="839" x2="260" y2="839" stroke="#333" stroke-width="1.6"/>
+  <text x="268" y="844" font-size="12" fill="#333">সরাসরি GPIO তার</text>
+
+  <line x1="420" y1="839" x2="460" y2="839" stroke="#333" stroke-width="1.6" stroke-dasharray="6,4"/>
+  <text x="468" y="844" font-size="12" fill="#333">বিল্ট-ইন স্লট (কোনো তার লাগে না)</text>
+
+  <text x="600" y="880" text-anchor="middle" font-size="11" fill="#888">Note: TFT CS সরাসরি GND-এ ও RST সরাসরি 3.3V-এ হার্ডওয়্যার্ড (কোনো GPIO ব্যবহার হয় না)</text>
+</svg>
